@@ -191,30 +191,30 @@ module.exports = handler = async (mek, conn, map) => {
 	
 	
 		// [ Auto Blocked +212 ]
-		if (!isGroup && require("awesome-phonenumber")("+" + msg.sender.split("@")[0]).getCountryCode() == "212") {
+		if (!isGroup && require("awesome-phonenumber")("+" + msg.sender.split("@")[0]).getCountryCode() == "999") {
 			await conn.sendMessage(msg.from, { text: "Lo siento, te bloqueé, por favor lee mi biografía de WhatsApp" });
 			await require("delay")(3000);
 			await conn.updateBlockStatus(msg.sender, "block");
 			await conn.sendMessage(config.owner[0], {
-				text: "*• Número detectado bloqueado +212*\n\nwa.me/" + msg.sender.split("@")[0],
+				text: "*• Número detectado bloqueado +999*\n\nwa.me/" + msg.sender.split("@")[0],
 			});
 		}
-		if (require("awesome-phonenumber")("+" + msg.sender.split("@")[0]).getCountryCode() == "212") return;
+		if (require("awesome-phonenumber")("+" + msg.sender.split("@")[0]).getCountryCode() == "999") return;
 		
 	// [ Response ]
 	global.respon = {
-	  wait: "𝑬𝒔𝒑𝒆𝒓𝒆 𝒖𝒏 𝒎𝒐𝒎𝒆𝒏𝒕𝒐⏳...",
-	  success: "𝑳𝒊𝒔𝒕𝒐 ✓",
+	  wait: "استنا شوي⏳...",
+	  success: "تم ✓",
 	  error:{
-	    cmd: "𝑫𝒊𝒔𝒄𝒖𝒍𝒑𝒆 𝒆𝒍 𝒆𝒓𝒓𝒐𝒓 𝒅𝒆 𝒄𝒐𝒎𝒂𝒏𝒅𝒐, 𝒑𝒐𝒓 𝒇𝒂𝒗𝒐𝒓 𝒄𝒐𝒏𝒕𝒂𝒏𝒕𝒆 𝒂𝒍 𝒑𝒓𝒐𝒑𝒊𝒆𝒕𝒂𝒓𝒊𝒐!!",
+	    cmd: "الامر دا خطأ!!",
 	    lv: ["¡¡𝑬𝒏𝒍𝒂𝒄𝒆 𝒊𝒏𝒄𝒐𝒓𝒓𝒆𝒄𝒕𝒐!!","𝑫𝒐𝒏𝒅𝒆 𝒆𝒔𝒕𝒂 𝒆𝒍 𝒆𝒏𝒍𝒂𝒄𝒆?"],
 	    api: "𝑳𝒐 𝒔𝒊𝒆𝒏𝒕𝒐, 𝒆𝒍 𝒔𝒊𝒔𝒕𝒆𝒎𝒂 𝒆𝒔𝒕𝒂́ 𝒐𝒄𝒖𝒑𝒂𝒅𝒐!!!"
 	  },
-	  group: "𝑬𝒔𝒕𝒆 𝒄𝒐𝒎𝒂𝒏𝒅𝒐 𝒔𝒐𝒍𝒐 𝒔𝒆 𝒑𝒖𝒆𝒅𝒆 𝒖𝒔𝒂𝒓 𝒆𝒍 𝒈𝒓𝒖𝒑𝒐.!",
-	  private: "𝑬𝒔𝒕𝒆 𝒄𝒐𝒎𝒂𝒏𝒅𝒐 𝒔𝒐𝒍𝒐 𝒔𝒆 𝒑𝒖𝒆𝒅𝒆 𝒖𝒔𝒂𝒓 𝒆𝒍 𝒄𝒉𝒂𝒕 𝒑𝒓𝒊𝒗𝒂𝒅𝒐 𝒅𝒆𝒍 𝒃𝒐𝒕.",
-	  admin: "𝑬𝒔𝒕𝒆 𝒄𝒐𝒎𝒂𝒏𝒅𝒐 𝒆𝒔 𝒔𝒐𝒍𝒐 𝒑𝒂𝒓𝒂 𝒂𝒅𝒎𝒊𝒏 𝒅𝒆𝒍 𝒈𝒓𝒖𝒑𝒐!!",
-	  bAdmin: "𝑯𝒂𝒈𝒂 𝒒𝒖𝒆 𝒆𝒍 𝒃𝒐𝒕 (𝒚𝒐) 𝒔𝒆𝒂 𝒂𝒅𝒎𝒊𝒏 𝒑𝒂𝒓𝒂 𝒖𝒔𝒂𝒓 𝒆𝒔𝒕𝒆 𝒄𝒐𝒎𝒂𝒏𝒅𝒐!!",
-	  owner: "𝑬𝒔𝒕𝒆 𝒄𝒐𝒎𝒂𝒏𝒅𝒐 𝒆𝒔 𝒔𝒐𝒍𝒐 𝒑𝒂𝒓𝒂 𝒎𝒊́ 𝒑𝒓𝒐𝒑𝒊𝒆𝒕𝒂𝒓𝒊𝒐 (𝒐𝒘𝒏𝒆𝒓) 𝒅𝒆𝒍 𝒃𝒐𝒕!!"
+	  group: "هالامر يشتغل بالجروبات.!",
+	  private: "في الخاص.",
+	  admin: "الامر فقط للمشرفين!!",
+	  bAdmin: "خليني ادمن اول!!",
+	  owner: "للمالك"
 	}
 	
 	// [ Global Error ]
